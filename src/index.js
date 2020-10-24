@@ -1,32 +1,29 @@
-const colors = [
-  '#FFFFFF',
-  '#2196F3',
-  '#4CAF50',
-  '#FF9800',
-  '#009688',
-  '#795548',
-];
-
-
-const randomIntegerFromInterval = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-};
-
-const buttonStart = document.querySelector('[data-action="start"]');
-const buttonStop = document.querySelector('[data-action="stop"]');
-let timerId = null;
-
-
-buttonStart.addEventListener('click', () => { timerId = setInterval(changeBobyColor, 2000) });
-
-buttonStop.addEventListener('click', () => {
-  clearInterval(timerId);
-  buttonStart.disabled = false;
+new CountdownTimer({
+  selector: '#timer-1',
+  targetDate: new Date('Jul 17, 2019'),
 });
 
+/*
+ * Оставшиеся дни: делим значение UTC на 1000 * 60 * 60 * 24, количество
+ * миллисекунд в одном дне (миллисекунды * секунды * минуты * часы)
+ */
+const days = Math.floor(time / (1000 * 60 * 60 * 24));
 
+/*
+ * Оставшиеся часы: получаем остаток от предыдущего расчета с помощью оператора
+ * остатка % и делим его на количество миллисекунд в одном часе
+ * (1000 * 60 * 60 = миллисекунды * минуты * секунды)
+ */
+const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
-function changeBobyColor() {
-      document.body.style.backgroundColor = colors[randomIntegerFromInterval(0, colors.length - 1)];
-    buttonStart.disabled = true;
-}
+/*
+ * Оставшиеся минуты: получаем оставшиеся минуты и делим их на количество
+ * миллисекунд в одной минуте (1000 * 60 = миллисекунды * секунды)
+ */
+const mins = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
+
+/*
+ * Оставшиеся секунды: получаем оставшиеся секунды и делим их на количество
+ * миллисекунд в одной секунде (1000)
+ */
+const secs = Math.floor((time % (1000 * 60)) / 1000);
