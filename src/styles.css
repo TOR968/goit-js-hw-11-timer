@@ -1,4 +1,33 @@
-/* body {
-  text-align: center;
-  padding: 1rem;
-} */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: tomato;
+  color: burlywood;
+}
+
+.timer {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  width: 50%;
+  top: 30%;
+  left: 25%;
+  position: absolute;
+}
+.field {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin: 30px;
+}
+.value {
+  border: 2px solid;
+  border-radius: 50%;
+  margin: 20px;
+  padding: 30px;
+  font-size: 40px;
+}
+.label {
+  text-transform: uppercase;
+  font-weight: 700;
+}
