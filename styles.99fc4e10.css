@@ -1,0 +1,2 @@
+body{margin:0;padding:0;background-color:tomato;color:#deb887}.timer{display:flex;flex-flow:row;justify-content:center;width:50%;top:30%;left:25%;position:absolute}.field{display:flex;flex-flow:column;align-items:center;margin:30px}.value{border:2px solid;border-radius:50%;margin:20px;padding:30px;font-size:40px}.label{text-transform:uppercase;font-weight:700}
+/*# sourceMappingURL=/oit-js-hw-11-timer/styles.99fc4e10.css.map */
